@@ -107,6 +107,7 @@ result = df.groupby("question_text").apply(weighted_avg)
 print(result.sort_values(ascending=False))
 
 Visualization
+<img width="1892" height="1410" alt="image" src="https://github.com/user-attachments/assets/cecee565-7310-48e1-91e7-ee14f3deb4b5" />
 
 
 
