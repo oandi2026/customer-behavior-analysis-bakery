@@ -77,6 +77,46 @@ Distribution Channels
 
 SQL Analysis Example
 
+# Customer Behavior Analysis - Bakery Dataset
+
+This repository contains a comprehensive data analysis of consumer purchasing habits, preferences, and behavioral triggers for a bakery business model. The insights generated aim to help stakeholders optimize product offerings, improve marketing strategies, and enhance customer retention.
+
+## 📊 Key Findings & Customer Insights
+
+Understanding why customers choose specific bakery products is critical to predicting demand. The visualization below breaks down the primary consumer behavior drivers and sentiment distributions:
+
+![Customer Purchase Drivers](customer_purchase_drivers.png)
+
+### 🔑 Core Takeaways
+* **Primary Behavior Triggers:** Visualizes what factors play the biggest role in converting a browser into a buyer.
+* **Sentiment Segmentation:** Breaks down customer alignment from *Strongly Agree* to *Strongly Disagree* to identify strong market fits or friction points.
+
+## 🛠️ Project Structure
+
+```text
+customer-behavior-analysis-bakery/
+├── data/
+│   └── customer_survey.csv       # Raw survey data input
+├── notebooks/
+│   └── exploratory_analysis.ipynb # Step-by-step data exploration
+├── customer_purchase_drivers.png # Saved visualization for dashboard
+├── visualize.py                  # Main Python visualization script
+└── README.md                     # Project documentation
+```
+
+## 🚀 How to Run the Analysis
+
+1. Clone this repository to your local machine.
+2. Ensure you have the required dependencies installed:
+   ```bash
+   pip install pandas matplotlib seaborn
+   ```
+3. Run the script to regenerate the dashboard visualization:
+   ```bash
+   python visualize.py
+   ```
+
+
 SELECT 
     question_text,
     SUM(CASE WHEN answer IN ('Strongly Agree','Agree') THEN count ELSE 0 END) AS positive,
