@@ -1,19 +1,22 @@
 import pandas as pd
 import plotly.express as px
+import streamlit as st
+
+# Tampilan judul web Streamlit
+st.title("Bakery Customer Behavior Analysis")
 
 # Load data
-url = "https://docs.google.com/spreadsheets/d/1uhxrhGQ6UHpw4Xx09PUgMtj32Ukg9P2VsMmKvx7pofM/export?format=csv"
+url = "https://google.com"
 df = pd.read_csv(url)
 
 # Likert order
 likert_order = [
-    "Strongly Agree", 
-    "Agree", 
-    "Don't Know", 
-    "Disagree", 
+    "Strongly Agree",
+    "Agree",
+    "Don't Know",
+    "Disagree",
     "Strongly Disagree"
 ]
-
 df['ANSWER'] = pd.Categorical(df['ANSWER'], categories=likert_order, ordered=True)
 
 # Aggregate total count per answer
@@ -22,7 +25,8 @@ df_bar = (
     .sum()
     .reset_index()
 )
-# Bar chart
+
+# Bar chart (Pastikan bagian variabel "fig" ini ada dan tidak terhapus)
 fig = px.bar(
     df_bar,
     x="ANSWER",
@@ -37,4 +41,5 @@ fig.update_layout(
     yaxis_title="Total Count"
 )
 
+# Menampilkan grafik ke dalam dashboard Streamlit
 st.plotly_chart(fig, use_container_width=True)
