@@ -4,33 +4,26 @@ import streamlit as st
 
 st.title("📊 Bakery Customer Behavior Analysis")
 
-url = "https://google.com"
+url = "https://docs.google.com/spreadsheets/d/1uhxrhGQ6UHpw4Xx09PUgMtj32Ukg9P2VsMmKvx7pofM/edit?usp=sharing"
 
-# 1. Load data
 df = pd.read_csv(url)
 
-# 2. Bersihkan nama kolom (Ubah ke UPPERCASE)
 df.columns = [c.strip().upper() for c in df.columns]
 
-# 3. Bersihkan isi data kolom ANSWER dan COUNT
 df["ANSWER"] = df["ANSWER"].astype(str).str.strip()
 df["COUNT"] = pd.to_numeric(df["COUNT"], errors="coerce")
 df = df.dropna(subset=["ANSWER", "COUNT"])
 
 st.write("DATA LOADED:", df.shape)
 
-# 4. Tambahkan FITUR FILTER agar grafik tidak menumpuk semua pertanyaan
-# Mengambil daftar pertanyaan unik untuk dropdown di Sidebar
-list_pertanyaan = df["QUESTION TEXT"].unique()
-pilihan_pertanyaan = st.sidebar.selectbox("Pilih Pertanyaan:", list_pertanyaan)
+list_question = df["QUESTION TEXT"].unique()
+pilihan_pertanyaan = st.sidebar.selectbox("Pilih Pertanyaan:", list_question)
 
-# Filter data berdasarkan pilihan user
 df_filtered = df[df["QUESTION TEXT"] == pilihan_pertanyaan]
 
 # 5. Grouping data yang sudah difilter
 df_bar = df_filtered.groupby("ANSWER")["COUNT"].sum().reset_index()
 
-# 6. Urutkan berdasarkan skala Likert secara aman
 order = ["Strongly Agree", "Agree", "Don't Know", "Disagree", "Strongly Disagree"]
 df_bar["ANSWER"] = pd.Categorical(df_bar["ANSWER"], categories=order, ordered=True)
 df_bar = df_bar.sort_values("ANSWER")
