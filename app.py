@@ -4,11 +4,13 @@ import streamlit as st
 
 st.title("📊 Bakery Customer Behavior Analysis")
 
-# 1. Load data (Menggunakan link Google Sheets Anda yang sudah terbukti bekerja di Notebook)
-url = "https://google.com"
+# Load data (WAJIB CSV valid)
+url = "https://docs.google.com/spreadsheets/d/1uhxrhGQ6UHpw4Xx09PUgMtj32Ukg9P2VsMmKvx7pofM/gviz/tq?tqx=out:csv"
 df = pd.read_csv(url)
 
-# 2. Atur urutan Skala Likert
+# DEBUG
+st.write(df.head())
+
 likert_order = [
     "Strongly Agree",
     "Agree",
@@ -16,16 +18,11 @@ likert_order = [
     "Disagree",
     "Strongly Disagree"
 ]
+
 df['ANSWER'] = pd.Categorical(df['ANSWER'], categories=likert_order, ordered=True)
 
-# 3. Hitung total data (Agregasi)
-df_bar = (
-    df.groupby('ANSWER', observed=False)['COUNT']
-    .sum()
-    .reset_index()
-)
+df_bar = df.groupby('ANSWER', observed=False)['COUNT'].sum().reset_index()
 
-# 4. Membuat Bar Chart Plotly
 fig = px.bar(
     df_bar,
     x="ANSWER",
@@ -35,10 +32,4 @@ fig = px.bar(
     text="COUNT"
 )
 
-fig.update_layout(
-    xaxis_title="Skala Respon",
-    yaxis_title="Total Count"
-)
-
-# 5. MENAMPILKAN KE STREAMLIT (Bagian pengganti fig.show())
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width='stretch')
