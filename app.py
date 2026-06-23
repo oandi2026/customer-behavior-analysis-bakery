@@ -1,5 +1,40 @@
-import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-st.title("📊 Bakery Analytics Dashboard")
+# Load data
+url = "https://docs.google.com/spreadsheets/d/1uhxrhGQ6UHpw4Xx09PUgMtj32Ukg9P2VsMmKvx7pofM/export?format=csv"
+df = pd.read_csv(url)
 
-st.write("Dashboard customer behavior & product perception")
+# Likert order
+likert_order = [
+    "Strongly Agree", 
+    "Agree", 
+    "Don't Know", 
+    "Disagree", 
+    "Strongly Disagree"
+]
+
+df['ANSWER'] = pd.Categorical(df['ANSWER'], categories=likert_order, ordered=True)
+
+# Aggregate total count per answer
+df_bar = (
+    df.groupby('ANSWER', observed=False)['COUNT']
+    .sum()
+    .reset_index()
+)
+# Bar chart
+fig = px.bar(
+    df_bar,
+    x="ANSWER",
+    y="COUNT",
+    color="ANSWER",
+    title="Total Distribution of Responses",
+    text="COUNT"
+)
+
+fig.update_layout(
+    xaxis_title="Skala Respon",
+    yaxis_title="Total Count"
+)
+
+st.plotly_chart(fig, use_container_width=True)
