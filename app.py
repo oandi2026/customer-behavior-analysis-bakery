@@ -16,7 +16,6 @@ likert_order = [
     "Disagree",
     "Strongly Disagree"
 ]
-
 df['ANSWER'] = pd.Categorical(df['ANSWER'], categories=likert_order, ordered=True)
 
 # Aggregation
@@ -41,5 +40,5 @@ fig.update_layout(
     yaxis_title="Total Count"
 )
 
-# Show in Streamlit
-st.plotly_chart(fig, width='stretch')
+# Perbaikan di baris ini agar grafik muncul secara responsif
+st.plotly_chart(fig, use_container_width=True)
