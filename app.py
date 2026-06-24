@@ -34,7 +34,7 @@ insights = {
     "1h4": """Respondents dislike consuming bread as a rice substitute during the night.""",
     "2a" : """Consumers prefer thick plastic packaging. With thick plastic packaging, which effectively prevents product damage and will last longer.""",
     "2b" : """Consumers prefer packaging with various patterns. Therefore, the bread company should increase the wrapping patterns from one type to various types, for example, the color brown for chocolate bread and the color red for white bread.""",
-    "2c": """Availability plays a key role in customer satisfaction. Any gaps in stock could directly impact sales, indicating the need for better inventory planning and supply chain management.""",
+    "2c" : """Consumers prefer packaging with attractive shapes; for that reason, the bread company should use appealing packaging, for example, house-shaped cardboard boxes that have handles.""",
     "2d": """Convenient store location contributes positively to customer purchase decisions. This reinforces the importance of strategic placement and accessibility in driving foot traffic.""",
     "2e": """Packaging is perceived adequately but not as a primary driver. Enhancing packaging design could improve brand perception and support premium positioning or gifting use cases.""",
     "2f": """Packaging is perceived adequately but not as a primary driver. Enhancing packaging design could improve brand perception and support premium positioning or gifting use cases.""",
