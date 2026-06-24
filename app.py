@@ -21,7 +21,7 @@ st.write("DATA LOADED:", df.shape)
 # INSIGHT MAPPING
 # =========================
 insights = {
-    "1a": """Based on the distribution data above, it is evident that personal consumption is the primary driver for most buyers. This trend aligns with observations showing that affordable filled breads—particularly cheese and chocolate buns—are highly favored by consumers. Because these products are both highly sought-after and profitable, increasing their production capacity is strongly recommended to maximize revenue."""",
+    "1a": """"Based on the distribution data above, it is evident that personal consumption is the primary driver for most buyers. This trend aligns with observations showing that affordable filled breads—particularly cheese and chocolate buns—are highly favored by consumers. Because these products are both highly sought-after and profitable, increasing their production capacity is strongly recommended to maximize revenue"""",
     "1b": """A significant portion of customers purchase products for family consumption, highlighting the importance of shareable and household-friendly items. This suggests an opportunity to introduce bundle packages or family-sized offerings.""",
     "1c": """Purchases made for others indicate that bakery products are also used in social settings. While not the primary driver, this segment presents opportunities for gift packaging and occasion-based promotions.""",
     "2a": """Taste remains a critical factor influencing customer decisions. High agreement levels suggest that product flavor meets customer expectations, reinforcing the importance of maintaining quality consistency.""",
