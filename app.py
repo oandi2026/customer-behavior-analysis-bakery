@@ -35,10 +35,10 @@ insights = {
     "2a" : """Consumers prefer thick plastic packaging. With thick plastic packaging, which effectively prevents product damage and will last longer.""",
     "2b" : """Consumers prefer packaging with various patterns. Therefore, the bread company should increase the wrapping patterns from one type to various types, for example, the color brown for chocolate bread and the color red for white bread.""",
     "2c" : """Consumers prefer packaging with attractive shapes; for that reason, the bread company should use appealing packaging, for example, house-shaped cardboard boxes that have handles.""",
-    "3" : """Based on the chart above, it can be concluded that the bakery has successfully established strong brand recognition among the public.""",
-    "4": """Packaging is perceived adequately but not as a primary driver. Enhancing packaging design could improve brand perception and support premium positioning or gifting use cases.""",
+    "3" : """It can be concluded that the bakery has successfully established strong brand recognition among the public.""",
+    "4": """"Respondents strongly believe that the bread is always fresh ('fresh from the oven')""",
     "5": """Packaging is perceived adequately but not as a primary driver. Enhancing packaging design could improve brand perception and support premium positioning or gifting use cases.""",
-    "2g": """Customer awareness of promotions appears limited, suggesting that marketing efforts may not be fully optimized. Strengthening promotional campaigns could significantly boost sales volume.""",
+    "6": """Customer awareness of promotions appears limited, suggesting that marketing efforts may not be fully optimized. Strengthening promotional campaigns could significantly boost sales volume.""",
     "3a": """Purchase frequency indicates stable repeat behavior among customers. This suggests a loyal customer base, which can be further leveraged through loyalty programs or targeted offers.""",
     "3b": """Overall satisfaction levels are high, indicating strong product-market fit. Maintaining product quality, competitive pricing, and availability will be key to sustaining long-term growth."""
 }
