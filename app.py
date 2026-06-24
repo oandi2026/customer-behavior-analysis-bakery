@@ -15,7 +15,6 @@ df["ANSWER"] = df["ANSWER"].astype(str).str.strip()
 df["COUNT"] = pd.to_numeric(df["COUNT"], errors="coerce")
 df = df.dropna(subset=["ANSWER", "COUNT"])
 
-st.write("DATA LOADED:", df.shape)
 
 # =========================
 # INSIGHT MAPPING
