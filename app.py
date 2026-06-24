@@ -25,8 +25,7 @@ insights = {
     "1c": """Purchases made for others indicate that bakery products are also used in social settings. 
     While not the primary driver, this segment presents opportunities for gift packaging and 
     occasion-based promotions.""",
-}
-    
+
 # 2. Clean and convert column names to uppercase
 df.columns = [c.strip().upper() for c in df.columns] 
 
