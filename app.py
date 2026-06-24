@@ -10,7 +10,7 @@ st.title("📊 Bakery Customer Behavior Analysis")
 # LOAD DATA WITH CACHING
 # =========================
 sheet_id = "1uhxrhGQ6UHpw4Xx09PUgMtj32Ukg9P2VsMmKvx7pofM"
-url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv"
+url = f"https://google.com{sheet_id}/gviz/tq?tqx=out:csv"
 
 @st.cache_data
 def load_and_clean_data(url_path):
@@ -22,8 +22,8 @@ def load_and_clean_data(url_path):
 try:
     df = load_and_clean_data(url)
     
-    # Verify that all required columns exist before processing
-    required_cols = ["QUESTION TEXT", "ANSWER", "COUNT", "QUESTION_ID"]
+    # Matching your actual spreadsheet columns after .upper() transformation
+    required_cols = ["QUESTION TEXT", "ANSWER", "COUNT", "QUESTION ID"]
     if all(col in df.columns for col in required_cols):
         
         # Data Cleaning
@@ -57,8 +57,8 @@ try:
         
         df_filtered = df[df["QUESTION TEXT"] == selected_question]
         
-        # Get the question ID safely
-        question_id = str(df_filtered["QUESTION_ID"].iloc[0]).strip()
+        # Fixed: Get the question ID safely by using .iloc[0] and matching "QUESTION ID" space
+        question_id = str(df_filtered["QUESTION ID"].iloc[0]).strip()
 
         # =========================
         # GROUPING & DYNAMIC SORT
@@ -103,7 +103,7 @@ try:
             else:
                 st.info(insights[question_id])
         else:
-            st.info("Insight not available for this question ID.")
+            st.info(f"Insight not available for question ID: {question_id}")
             
     else:
         st.error(f"Missing required columns in your Google Sheet. It must contain: {required_cols}")
