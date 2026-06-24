@@ -56,8 +56,6 @@ df_bar = df_bar.sort_values("ANSWER")
 
 st.write(f"DATA FOR: {selected_question}", df_bar)
 
-st.write(f"DATA FOR: {selected_question}", df_bar)
-
 # 5. Generate and Display Chart
 fig = px.bar(
     df_bar,
