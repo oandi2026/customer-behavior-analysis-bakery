@@ -48,6 +48,8 @@ df_bar = df_bar.sort_values("ANSWER")
 
 st.write(f"DATA FOR: {selected_question}", df_bar)
 
+st.write(f"DATA FOR: {selected_question}", df_bar)
+
 # 5. Generate and Display Chart
 fig = px.bar(
     df_bar,
@@ -62,12 +64,18 @@ fig.update_traces(textposition='inside')
 fig.update_layout(xaxis_title="Responses", yaxis_title="Total Count")
 st.plotly_chart(fig, use_container_width=True)
 
-# 6. Display Analysis Insight Automatically
+# 6. Display Analysis Insight Automatically (FIXED LOGIC)
 selected_insight = None
-for key, insight_text in insights.items():
-    if key.lower() in selected_question.lower():
-        selected_insight = insight_text
-        break
+
+if not df_filtered.empty and "QUESTION ID" in df_filtered.columns:
+    # 1. Look up the actual ID (e.g., '1a') matching the chosen text
+    current_id = str(df_filtered["QUESTION ID"].iloc[0]).strip().lower()
+    
+    # 2. Match the cleaned ID directly against the dictionary keys
+    for key, insight_text in insights.items():
+        if key.lower().strip() == current_id:
+            selected_insight = insight_text
+            break
 
 if selected_insight:
     st.subheader("💡 Analysis Insight")
@@ -75,6 +83,8 @@ if selected_insight:
 else:
     st.subheader("💡 Analysis Insight")
     st.caption("No specific insight mapped for this question format.")
+
+
 
 
 
