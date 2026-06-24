@@ -22,7 +22,7 @@ def load_and_clean_data(url_path):
 try:
     df = load_and_clean_data(url)
     
-    # Matching your actual spreadsheet columns after .upper() transformation
+    # Match your sheet columns exactly ("QUESTION ID" with space)
     required_cols = ["QUESTION TEXT", "ANSWER", "COUNT", "QUESTION ID"]
     if all(col in df.columns for col in required_cols):
         
@@ -57,8 +57,11 @@ try:
         
         df_filtered = df[df["QUESTION TEXT"] == selected_question]
         
-        # Fixed: Get the question ID safely by using .iloc[0] and matching "QUESTION ID" space
-        question_id = str(df_filtered["QUESTION ID"].iloc[0]).strip()
+        # PERFECT FIX: Extract the literal string value directly using .values[0]
+        if not df_filtered.empty:
+            question_id = str(df_filtered["QUESTION ID"].values[0]).strip()
+        else:
+            question_id = ""
 
         # =========================
         # GROUPING & DYNAMIC SORT
