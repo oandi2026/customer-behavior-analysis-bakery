@@ -44,8 +44,13 @@ insights = {
     "10a": """Data shows family is the primary awareness driver. This connection directly influences buying habits, specifically for family requests, party catering, and as a main meal substitute.""",
     "10b": """The results indicate that, in addition to other sources, friends also contribute to respondents’ awareness of this bread.""",
     "10c": """Based on the results above, respondents stated that they have never heard radio advertisements for the bread. Therefore, it is recommended that the company promote its products through private radio advertising. This promotion is expected to highlight the product’s uniqueness or differences. Although there may be no significant physical differences, effective promotion can create perceived psychological differences among consumers.""",
-    "10d": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
-   
+    "10d": """Based on the results above, respondents stated that they have never seen bread advertisements in magazines. For the same reasons as in question 10.c, it is recommended that the company promote its products through magazines and newspapers to increase visibility.""",
+"11a": """Based on the results above, respondents generally purchase bread from street vendors. Therefore, it is recommended that the company support and train its vendors to ensure they provide satisfactory service to consumers.""",
+"11b": """The results indicate that respondents sometimes buy bread from shops. Given the company’s strong brand, product quality, variety, affordable pricing, and loyal customers, it is recommended to expand distribution through retail shops to strengthen market reach amid competition.""",
+"11c": """Based on the results above, respondents stated that they never purchase bread from supermarkets. For the same reasons as in question 11.b, it is recommended that the company also utilize supermarkets as a distribution channel.""",
+"12": """Based on the results above, the bread is considered easy to obtain. This finding can be linked to question 11.a, where almost all respondents stated that they purchase bread from street vendors."""    
+
+    
 }
 
 # 3. Filter data based on Sidebar selection
