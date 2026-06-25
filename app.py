@@ -48,8 +48,9 @@ insights = {
 "11a": """Based on the results above, respondents generally purchase bread from mobile bread vendor. Therefore, it is recommended that the company support and train its vendors to ensure they provide satisfactory service to consumers.""",
 "11b": """The results indicate that respondents sometimes buy bread from shops. Given the company’s strong brand, product quality, variety, affordable pricing, and loyal customers, it is recommended to expand distribution through retail shops to strengthen market reach amid competition.""",
 "11c": """Based on the results above, respondents stated that they never purchase bread from supermarkets. It is recommended that the company also utilize supermarkets as a distribution channel.""",
-"12": """Based on the results above, the bread is considered easy to obtain. This finding can be linked to question 11.a, where almost all respondents stated that they purchase bread from street vendors."""    
-"13": """Most respondents are loyal customers, with the majority selecting “Strongly Agree” and “Agree,” showing high satisfaction and strong repeat purchase behavior."""
+"12": """Based on the results above, the bread is considered easy to obtain. This finding can be linked to question 11.a, where almost all respondents stated that they purchase bread from street vendors.""",    
+"13": """Most respondents are loyal customers, with the majority selecting “Strongly Agree” and “Agree,” showing high satisfaction and strong repeat purchase behavior.""",
+"14": """From the high number of frequently purchased types of bread, the author concludes that bread is increasingly being consumed as a substitute for rice, especially white bread and filled bread."""
     
 }
 
