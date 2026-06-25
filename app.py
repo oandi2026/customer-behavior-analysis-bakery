@@ -45,9 +45,7 @@ insights = {
     "10b": """The results indicate that, in addition to other sources, friends also contribute to respondents’ awareness of this bread."""
     "10c": """Based on the results above, respondents stated that they have never heard radio advertisements for the bread. Therefore, it is recommended that the company promote its products through private radio advertising. This promotion is expected to highlight the product’s uniqueness or differences. Although there may be no significant physical differences, effective promotion can create perceived psychological differences among consumers."""
     "10d": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
-    "8": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
-    "8": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
-    "8": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
+    
 }
 
 # 3. Filter data based on Sidebar selection
