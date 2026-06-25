@@ -39,7 +39,8 @@ insights = {
     "5": """Respondents favor the bread due to its consistent baking quality, being well baked without becoming overcooked or burnt.""",
     "6": """The chart shows that respondents perceive the bread as soft, but in some cases too soft and lacking density, indicating an opportunity to improve texture by increasing firmness.""",
     "7": """Based on the chart, the bread is considered less dense, and this perception is reinforced by consumers’ frequent purchasing experience, allowing them to clearly identify the texture issue.""",
-    
+     "8": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
+     
 }
 
 # 3. Filter data based on Sidebar selection
