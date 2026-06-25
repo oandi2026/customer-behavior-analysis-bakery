@@ -29,7 +29,7 @@ insights = {
     "1g": """According to the chart, some respondents consume bread as a snack, which represents the fifth reason for purchasing bread.""",
     "1h1": """From the chart above, it can be said that respondents really enjoy eating bread as a substitute for rice in the morning.""",
     "1h2": """Respondents show a low preference for consuming bread as rice substitute during lunch""",
-    "1h3": """"Respondents dislike consuming bread as a rice substitute during the evening. Furthermore, respondent critique indicates that traditional moist cakes (kue basah) are less palatable in the evening due to a lack of freshness.""",
+    "1h3": """Respondents dislike consuming bread as a rice substitute during the evening. Furthermore, respondent critique indicates that traditional moist cakes (kue basah) are less palatable in the evening due to a lack of freshness.""",
     "1h4": """Respondents dislike consuming bread as a rice substitute during the night.""",
     "2a" : """Consumers prefer thick plastic packaging. With thick plastic packaging, which effectively prevents product damage and will last longer.""",
     "2b" : """Consumers prefer packaging with various patterns. Therefore, the bread company should increase the wrapping patterns from one type to various types, for example, the color brown for chocolate bread and the color red for white bread.""",
