@@ -39,12 +39,6 @@ insights = {
     "5": """Respondents favor the bread due to its consistent baking quality, being well baked without becoming overcooked or burnt.""",
     "6": """The chart shows that respondents perceive the bread as soft, but in some cases too soft and lacking density, indicating an opportunity to improve texture by increasing firmness.""",
     "7": """Based on the chart, the bread is considered less dense, and this perception is reinforced by consumers’ frequent purchasing experience, allowing them to clearly identify the texture issue.""",
-    "8": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
-    "9": """Consumers perceive the bread pricing as reasonable, indicating strong price acceptability."""
-    "10a": """Data shows family is the primary awareness driver. This connection directly influences buying habits, specifically for family requests, party catering, and as a main meal substitute."""
-    "10b": """The results indicate that, in addition to other sources, friends also contribute to respondents’ awareness of this bread."""
-    "10c": """Based on the results above, respondents stated that they have never heard radio advertisements for the bread. Therefore, it is recommended that the company promote its products through private radio advertising. This promotion is expected to highlight the product’s uniqueness or differences. Although there may be no significant physical differences, effective promotion can create perceived psychological differences among consumers."""
-    "10d": """Based on the survey findings, the range of bread varieties offered is adequate to satisfy consumer preferences, reflecting strong product diversity."""
     
 }
 
