@@ -181,3 +181,42 @@ st.dataframe(df_rules.sort_values(by='Strength Count', ascending=False), use_con
 
 
 
+
+# Create a dedicated section for business intelligence analysis
+st.divider() # Horizontal divider line for visual separation
+
+st.header("💡 Business Intelligence & Strategy")
+
+# Use side-by-side columns to optimize vertical screen space
+col1, col2 = st.columns(2)
+
+with col1:
+    # Use st.info box to give 'Key Insights' a contrasting background color
+    st.subheader("📌 Key Insights")
+    
+    insight_text = """
+    * **Sales Decline:** The bakery is currently experiencing a decline in sales performance, indicating the need for strategic adjustments.
+    * **Primary Drivers:**
+        * Changing consumer preferences.
+        * Low promotional activity and limited product awareness.
+    * **Rice Substitute Trend:** Consumer behavior shows that bread is increasingly consumed as a substitute for rice, especially for daily meals. 👉 *This signals a strong growth opportunity in staple-like bread products.*
+    * **Uncapitalized Bottlenecks:** The company has not fully capitalized on this trend due to limited product innovation, lack of attractive packaging, and weak marketing communication.
+    * **Hidden Potential:** Several products (e.g., bread for events or parties) suffer from low visibility, not necessarily low demand.
+    """
+    st.info(insight_text)
+
+with col2:
+    # Use st.success box to highlight positive, actionable business solutions
+    st.subheader("🚀 Strategic Recommendations")
+    
+    recommendation_text = """
+    * **Focus on High-Demand Products:** Increase production of affordable and popular items such as cheese and chocolate-filled bread.
+    * **Expand Staple-Oriented Products:** Develop larger-sized or family-size bread to position bread as a rice alternative.
+    * **Improve Product Presentation:** Enhance visual appeal for special occasions (e.g., decorated bread similar to cakes).
+    * **Upgrade Packaging Design:** Introduce more attractive and functional packaging, especially for souvenir/gift purposes.
+    * **Differentiate Through Branding:** Use color variation and design to distinguish flavors and improve shelf appeal.
+    * **Enhance Product Quality:** Improve texture and consistency, especially for staple products like plain bread.
+    * **Monitor Consumer Trends:** Continuously track changing preferences and adapt product offerings accordingly.
+    * **Strengthen Promotion Strategy:** Increase marketing efforts to boost brand awareness, communicate product value, and build competitive differentiation.
+    """
+    st.success(recommendation_text)
