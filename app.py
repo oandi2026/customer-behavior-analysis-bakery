@@ -1,6 +1,14 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# --- STREAMLIT UI CONFIGURATION ---
+st.set_page_config(page_title="Bakery Consumer Insights Dashboard", layout="wide")
+st.title("🍞 Bakery Consumer Insights & Market Basket Analysis")
+st.markdown("Interactive dashboard built from survey data and text-mined customer associations.")
+
 
 st.title("📊 Bakery Customer Behavior Analysis")
 
@@ -101,7 +109,81 @@ else:
     st.subheader("💡 Analysis Insight")
     st.caption("No specific insight mapped for this question format.")
 
+insights = { 
+    "1a": "Based on the distribution data above, it is evident that personal consumption...", 
+    "1b": "Based on the calculation results above, it can be stated that all respondents...", 
+    # ... leave all your text here ...
+}
 
+# --- THE ANALYSIS ENGINE ---
+keywords = {
+    'Product': ['plain bread', 'white bread', 'filled bread', 'cheese bun', 'chocolate bun', 'cake', 'moist cake'],
+    'Occasion': ['morning', 'breakfast', 'snack', 'personal consumption', 'family', 'guest', 'gift', 'souvenir', 'party'],
+    'Packaging & Features': ['thick plastic', 'cardboard box', 'house-shaped', 'handle', 'topping', 'spread', 'fresh', 'soft', 'dense'],
+    'Channel': ['mobile vendor', 'street vendor', 'shop', 'retail', 'supermarket']
+}
+
+connections = []
+for code, text in insights.items():
+    text_lower = text.lower()
+    found_nodes = {}
+    for category, words in keywords.items():
+        for word in words:
+            if word in text_lower:
+                found_nodes[word.title()] = category
+                
+    node_list = list(found_nodes.items())
+    for i in range(len(node_list)):
+        for j in range(i + 1, len(node_list)):
+            node_a, cat_a = node_list[i]
+            node_b, cat_b = node_list[j]
+            if cat_a != cat_b: 
+                connections.append((node_a, node_b))
+
+G = nx.Graph()
+G.add_edges_from(connections)
+
+color_map = []
+for node in G:
+    node_lower = node.lower()
+    if any(w in node_lower for w in keywords['Product']): color_map.append('#ff9999')
+    elif any(w in node_lower for w in keywords['Occasion']): color_map.append('#99ff99')
+    elif any(w in node_lower for w in keywords['Packaging & Features']): color_map.append('#99ccff')
+    else: color_map.append('#ffcc99')
+
+# --- DISPLAY LAYOUT (Side-by-Side) ---
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    st.write("### 🕸️ Consumer Insights Association Map")
+    fig, ax = plt.subplots(figsize=(10, 7))
+    pos = nx.spring_layout(G, k=0.5, iterations=50)
+    nx.draw_networkx_nodes(G, pos, node_size=1000, node_color=color_map, alpha=0.9, ax=ax)
+    nx.draw_networkx_edges(G, pos, width=1.5, alpha=0.6, edge_color='gray', ax=ax)
+    nx.draw_networkx_labels(G, pos, font_size=8, font_weight='bold', ax=ax)
+    plt.axis('off')
+    st.pyplot(fig)
+
+with col2:
+    st.write("### 📋 Executive Business Recommendations")
+    st.markdown("""
+    **1. The Family Breakfast Bundle**
+    * Target: Morning plain bread buyers.
+    * Strategy: Cross-sell with spreads and toppings.
+    
+    **2. Premium Gifting Options**
+    * Target: Souvenir and guest-serving segments.
+    * Strategy: Introduce house-shaped boxes with handles.
+    
+    **3. Flavor-Coded Packaging**
+    * Target: Chocolate and white bread buyers.
+    * Strategy: Transition to thick plastic with specific color accents (brown/red).
+    """)
+
+st.write("### 🔍 Raw Association Strength Table")
+df_assoc = pd.DataFrame(connections, columns=['Item A', 'Item B'])
+df_rules = df_assoc.groupby(['Item A', 'Item B']).size().reset_index(name='Strength Count')
+st.dataframe(df_rules.sort_values(by='Strength Count', ascending=False), use_container_width=True)
 
 
 
