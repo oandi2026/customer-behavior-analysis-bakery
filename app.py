@@ -109,12 +109,6 @@ else:
     st.subheader("💡 Analysis Insight")
     st.caption("No specific insight mapped for this question format.")
 
-insights = { 
-    "1a": "Based on the distribution data above, it is evident that personal consumption...", 
-    "1b": "Based on the calculation results above, it can be stated that all respondents...", 
-    # ... leave all your text here ...
-}
-
 # --- THE ANALYSIS ENGINE ---
 keywords = {
     'Product': ['plain bread', 'white bread', 'filled bread', 'cheese bun', 'chocolate bun', 'cake', 'moist cake'],
